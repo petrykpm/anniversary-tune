@@ -15,7 +15,10 @@ import { ProgressBar } from "./ProgressBar";
 
 export function PlayerScreen() {
   return (
-    <section className="snap-section relative flex min-h-[100%] flex-col px-5 pt-4 pb-6">
+    <section
+      className="snap-section relative flex min-h-[100%] flex-col px-5 pt-4 pb-6"
+      style={{ background: "var(--gradient-wine)" }}
+    >
       {/* topo */}
       <motion.div
         initial={{ opacity: 0, y: -12 }}
