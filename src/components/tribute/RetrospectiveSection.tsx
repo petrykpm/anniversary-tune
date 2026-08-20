@@ -52,7 +52,11 @@ export function RetrospectiveSection() {
             transition={{ type: "spring", stiffness: 90, damping: 18 }}
             className={`relative mb-8 ${i % 2 === 0 ? "mr-6" : "ml-6"}`}
           >
-            <span className="absolute -left-[22px] top-6 h-3 w-3 rounded-full bg-wine-bright ring-4 ring-background" />
+            <span
+              className={`absolute top-6 h-3 w-3 rounded-full bg-wine-bright ring-4 ring-background ${
+                i % 2 === 0 ? "-left-[22px]" : "-left-[46px]"
+              }`}
+            />
             <div className="overflow-hidden rounded-2xl bg-card shadow-[0_24px_60px_-30px_oklch(0_0_0/0.9)] ring-1 ring-border">
               <motion.img
                 src={item.src}
