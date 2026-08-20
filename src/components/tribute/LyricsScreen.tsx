@@ -82,7 +82,7 @@ export function LyricsScreen({ onClose }: { onClose: () => void }) {
         {/* scrollbar decorativa */}
         <div className="pointer-events-none absolute right-1.5 top-6 bottom-6 w-1 rounded-full bg-foreground/15">
           <motion.div
-            className="w-1 rounded-full bg-foreground/70"
+            className="absolute w-1 rounded-full bg-foreground/70"
             style={{ height: "22%" }}
             animate={{ top: `${trilhaProgresso * 78}%` }}
             transition={{ duration: 0.8, ease: "easeOut" }}
