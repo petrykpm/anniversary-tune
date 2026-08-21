@@ -21,6 +21,8 @@ export const musicaNomeCurto = "Lonely Day";
 export const artista = "System Of A Down";
 /** Duração da faixa em segundos (2:52) */
 export const duracaoSegundos = 172;
+/** Arquivo de áudio (fica em /public/audio) — toca sozinho quando a página abre */
+export const musicaSrc = "/audio/lonely-day.mp3";
 
 /** Fotos principais */
 export const fotoPlayer = couple1;
