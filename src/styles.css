@@ -40,9 +40,10 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-wine: var(--wine);
-  --color-wine-bright: var(--wine-bright);
-  --color-rose-soft: var(--rose-soft);
+  --color-spotify-green: var(--spotify-green);
+  --color-track: var(--track);
+  --color-text-subtle: var(--text-subtle);
+
   --font-sans: "Poppins", "Inter", ui-sans-serif, system-ui, sans-serif;
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
