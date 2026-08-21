@@ -6,6 +6,7 @@ import couple1 from "@/assets/couple-1.jpg";
 import couple2 from "@/assets/couple-2.jpg";
 import couple3 from "@/assets/couple-3.jpg";
 import couple4 from "@/assets/couple-4.jpg";
+import couple5 from "@/assets/couple-5.jpg";
 import coupleSobre from "@/assets/couple-sobre.jpg";
 
 /** Data de início do namoro (ano, mês, dia) */
@@ -49,6 +50,7 @@ export const retrospectiva = [
   { src: couple2, legenda: "Nossas noites andando sem rumo" },
   { src: couple3, legenda: "Rindo de nada, do jeito que a gente gosta" },
   { src: couple4, legenda: "E ainda é só o começo" },
+  { src: couple5, legenda: "Hoje, dois anos depois — e ainda de mãos dadas" },
 ];
 
 export const mensagemFinal = "Que venham muitos mais 🍷🎶";
