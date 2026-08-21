@@ -34,8 +34,8 @@ export function LyricsScreen({ onClose }: { onClose: () => void }) {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 40, scale: 0.98 }}
       transition={{ type: "spring", stiffness: 110, damping: 20 }}
-      className="absolute inset-0 z-30 flex flex-col"
-      style={{ background: "var(--gradient-player)" }}
+      className="absolute inset-0 z-30 flex flex-col bg-background"
+
     >
       <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 bg-background/40 px-4 py-3 backdrop-blur">
         <motion.button
