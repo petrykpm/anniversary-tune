@@ -68,7 +68,7 @@ export function PlayerScreen() {
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
           className="shrink-0"
         >
-          <BadgeCheck className="fill-wine-bright text-foreground" size={30} />
+          <BadgeCheck className="fill-spotify-green text-foreground" size={30} />
         </motion.span>
       </motion.div>
 
@@ -96,7 +96,7 @@ export function PlayerScreen() {
             aria-label="controle"
             whileHover={{ scale: 1.15 }}
             whileTap={{ scale: 0.9 }}
-            className="text-foreground/85"
+            className="text-foreground/70"
           >
             <Icon size={i === 0 ? 22 : 30} className={i === 1 ? "fill-current" : ""} />
           </motion.button>
@@ -109,7 +109,7 @@ export function PlayerScreen() {
             aria-label="controle"
             whileHover={{ scale: 1.15 }}
             whileTap={{ scale: 0.9 }}
-            className="text-foreground/85"
+            className="text-foreground/70"
           >
             <Icon size={i === 0 ? 30 : 22} className={i === 0 ? "fill-current" : ""} />
           </motion.button>
