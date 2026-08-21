@@ -3,9 +3,9 @@
  * =======================================================================*/
 
 import couple1 from "@/assets/couple-1.jpg";
-import couple2 from "@/assets/couple-2.jpg";
 import couple3 from "@/assets/couple-3.jpg";
 import couple5 from "@/assets/couple-5.jpg";
+import couple6 from "@/assets/couple-6.jpg";
 import coupleSobre from "@/assets/couple-sobre.jpg";
 
 /** Data de início do namoro (ano, mês, dia) */
@@ -46,7 +46,7 @@ export const cartaLinhas = [
 /** Retrospectiva — troque por fotos reais depois */
 export const retrospectiva = [
   { src: couple1, legenda: "Agosto de 2024 — o começo de tudo" },
-  { src: couple2, legenda: "Nossas noites andando sem rumo" },
+  { src: couple6, legenda: "Nosso primeiro ano novo juntos" },
   { src: couple3, legenda: "Rindo de nada, do jeito que a gente gosta" },
   { src: couple5, legenda: "Hoje, dois anos depois — e ainda de mãos dadas" },
 ];
