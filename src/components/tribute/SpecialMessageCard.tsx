@@ -10,7 +10,7 @@ export function SpecialMessageCard({ onOpen }: { onOpen: () => void }) {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ type: "spring", stiffness: 90, damping: 18 }}
         className="rounded-2xl p-6 shadow-[0_30px_80px_-30px_oklch(0.35_0.15_18/0.8)]"
-        style={{ background: "var(--gradient-wine)" }}
+        style={{ background: "var(--gradient-player)" }}
       >
         <p className="text-sm font-bold text-foreground/85">Mensagem especial</p>
         <p className="mt-4 text-2xl font-extrabold leading-snug tracking-tight text-foreground">

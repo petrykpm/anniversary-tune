@@ -17,7 +17,7 @@ export function PlayerScreen() {
   return (
     <section
       className="snap-section relative flex min-h-[100%] flex-col px-5 pt-4 pb-6"
-      style={{ background: "var(--gradient-wine)" }}
+      style={{ background: "var(--gradient-player)" }}
     >
       {/* topo */}
       <motion.div
