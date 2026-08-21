@@ -6,7 +6,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { duracaoSegundos } from "./config";
+import { duracaoSegundos, musicaSrc } from "./config";
 
 type PlayerState = {
   playing: boolean;
@@ -21,33 +21,84 @@ type PlayerState = {
 const PlayerContext = createContext<PlayerState | null>(null);
 
 export function PlayerProvider({ children }: { children: ReactNode }) {
-  const [playing, setPlaying] = useState(true);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [playing, setPlaying] = useState(false);
   const [position, setPosition] = useState(0);
-  const raf = useRef<number | null>(null);
-  const last = useRef<number>(0);
+  const [duration, setDuration] = useState(duracaoSegundos);
 
   useEffect(() => {
-    if (!playing) return;
-    last.current = performance.now();
-    const tick = (now: number) => {
-      const dt = (now - last.current) / 1000;
-      last.current = now;
-      setPosition((p) => (p + dt) % duracaoSegundos);
-      raf.current = requestAnimationFrame(tick);
+    const audio = new Audio(musicaSrc);
+    audio.preload = "auto";
+    audioRef.current = audio;
+
+    const onTime = () => setPosition(audio.currentTime);
+    const onMeta = () => setDuration(audio.duration || duracaoSegundos);
+    const onEnd = () => {
+      audio.currentTime = 0;
+      audio.play().catch(() => {});
     };
-    raf.current = requestAnimationFrame(tick);
+
+    audio.addEventListener("timeupdate", onTime);
+    audio.addEventListener("loadedmetadata", onMeta);
+    audio.addEventListener("ended", onEnd);
+
+    // tenta tocar sozinha assim que a página abre; se o navegador bloquear
+    // autoplay com som, toca no primeiro toque/clique da pessoa
+    const startOnInteraction = () => {
+      audio
+        .play()
+        .then(() => setPlaying(true))
+        .catch(() => {});
+      window.removeEventListener("pointerdown", startOnInteraction);
+      window.removeEventListener("keydown", startOnInteraction);
+    };
+
+    audio
+      .play()
+      .then(() => setPlaying(true))
+      .catch(() => {
+        window.addEventListener("pointerdown", startOnInteraction, { once: true });
+        window.addEventListener("keydown", startOnInteraction, { once: true });
+      });
+
     return () => {
-      if (raf.current) cancelAnimationFrame(raf.current);
+      audio.pause();
+      audio.removeEventListener("timeupdate", onTime);
+      audio.removeEventListener("loadedmetadata", onMeta);
+      audio.removeEventListener("ended", onEnd);
+      window.removeEventListener("pointerdown", startOnInteraction);
+      window.removeEventListener("keydown", startOnInteraction);
     };
-  }, [playing]);
+  }, []);
+
+  const toggle = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (playing) {
+      audio.pause();
+      setPlaying(false);
+    } else {
+      audio
+        .play()
+        .then(() => setPlaying(true))
+        .catch(() => {});
+    }
+  };
+
+  const reset = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.currentTime = 0;
+    setPosition(0);
+  };
 
   const value: PlayerState = {
     playing,
-    toggle: () => setPlaying((p) => !p),
+    toggle,
     position,
-    duration: duracaoSegundos,
-    progress: position / duracaoSegundos,
-    reset: () => setPosition(0),
+    duration,
+    progress: duration > 0 ? position / duration : 0,
+    reset,
   };
 
   return <PlayerContext.Provider value={value}>{children}</PlayerContext.Provider>;
