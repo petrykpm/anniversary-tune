@@ -57,11 +57,19 @@ export function PlayerScreen() {
         className="mt-6 flex items-center gap-3"
       >
         <div className="min-w-0 flex-1 overflow-hidden">
-          {/* recorte à esquerda, como no Spotify quando o título é longo */}
-          <h1 className="-ml-6 whitespace-nowrap text-2xl font-extrabold tracking-tight text-foreground">
-            {artista} - {musicaNome}
-          </h1>
-          <p className="-ml-6 mt-1 truncate text-sm font-medium text-foreground/60">{artista}</p>
+          <motion.div
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            className="flex w-max whitespace-nowrap"
+          >
+            <h1 className="pr-8 text-2xl font-extrabold tracking-tight text-foreground">
+              {artista} - {musicaNome}
+            </h1>
+            <h1 className="pr-8 text-2xl font-extrabold tracking-tight text-foreground">
+              {artista} - {musicaNome}
+            </h1>
+          </motion.div>
+          <p className="mt-1 truncate text-sm font-medium text-foreground/60">{artista}</p>
         </div>
         <motion.span
           animate={{ scale: [1, 1.16, 1] }}

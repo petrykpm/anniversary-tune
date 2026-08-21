@@ -6,6 +6,7 @@ import couple1 from "@/assets/couple-1.jpg";
 import couple2 from "@/assets/couple-2.jpg";
 import couple3 from "@/assets/couple-3.jpg";
 import couple4 from "@/assets/couple-4.jpg";
+import coupleSobre from "@/assets/couple-sobre.jpg";
 
 /** Data de início do namoro (ano, mês, dia) */
 export const dataInicio = new Date("2024-08-25T00:00:00");
@@ -26,7 +27,7 @@ export const musicaSrc = "/audio/lonely-day.mp3";
 
 /** Fotos principais */
 export const fotoPlayer = couple1;
-export const fotoSobre = couple4;
+export const fotoSobre = coupleSobre;
 
 /** Teaser da mensagem especial */
 export const mensagemTeaser =
@@ -36,9 +37,10 @@ export const mensagemTeaser =
 export const cartaLinhas = [
   "Dois anos. Parece pouco tempo pra tudo que você já significa pra mim.",
   "Aprendi que \u201Clar\u201D não é um lugar, é um sentimento — e esse sentimento tem o seu sorriso, sua paciência, seu jeito de estar comigo em qualquer dia, bom ou ruim.",
-  "[continue a carta aqui]",
-  "[continue a carta aqui]",
-  "[continue a carta aqui]",
+  "Você transforma coisa simples em memória boa: um fim de semana de filme no sofá, uma partida boba de Minecraft, qualquer dia comum vira dia especial só por você estar nele.",
+  "Eu te admiro mais do que você imagina — pela sua inteligência, pela facilidade que você tem de aprender e enfrentar tudo, e principalmente por ser exatamente do jeito que você é, sem pedir desculpas por isso.",
+  "Obrigado por esses dois anos. Que venham muitos outros — cheios de filme, sofá, risada e você.",
+  "Eu te amo. ❤️",
 ];
 
 /** Retrospectiva — troque por fotos reais depois */

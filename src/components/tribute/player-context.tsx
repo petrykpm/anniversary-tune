@@ -42,23 +42,38 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
     audio.addEventListener("loadedmetadata", onMeta);
     audio.addEventListener("ended", onEnd);
 
-    // tenta tocar sozinha assim que a página abre; se o navegador bloquear
-    // autoplay com som, toca no primeiro toque/clique da pessoa
-    const startOnInteraction = () => {
+    const events = ["pointerdown", "touchstart", "keydown", "scroll", "click"] as const;
+    const removeInteractionListeners = () => {
+      events.forEach((ev) => window.removeEventListener(ev, startOnInteraction));
+    };
+
+    // fallback: se nada disso funcionar, toca assim que a pessoa
+    // tocar/clicar/rolar a página pela primeira vez
+    function startOnInteraction() {
+      audio.muted = false;
       audio
         .play()
         .then(() => setPlaying(true))
         .catch(() => {});
-      window.removeEventListener("pointerdown", startOnInteraction);
-      window.removeEventListener("keydown", startOnInteraction);
-    };
+      removeInteractionListeners();
+    }
 
+    // truque pra "enganar" o bloqueio de autoplay dos navegadores:
+    // eles quase sempre permitem tocar automaticamente se começar mudo,
+    // então tocamos mudo e desmutamos logo em seguida
+    audio.muted = true;
     audio
       .play()
-      .then(() => setPlaying(true))
+      .then(() => {
+        setPlaying(true);
+        // pequeno delay pra desmutar já com o áudio rodando
+        setTimeout(() => {
+          audio.muted = false;
+        }, 150);
+      })
       .catch(() => {
-        window.addEventListener("pointerdown", startOnInteraction, { once: true });
-        window.addEventListener("keydown", startOnInteraction, { once: true });
+        // navegador bloqueou até mudo (raro) — espera interação
+        events.forEach((ev) => window.addEventListener(ev, startOnInteraction, { once: true }));
       });
 
     return () => {
@@ -66,8 +81,7 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       audio.removeEventListener("timeupdate", onTime);
       audio.removeEventListener("loadedmetadata", onMeta);
       audio.removeEventListener("ended", onEnd);
-      window.removeEventListener("pointerdown", startOnInteraction);
-      window.removeEventListener("keydown", startOnInteraction);
+      removeInteractionListeners();
     };
   }, []);
 
