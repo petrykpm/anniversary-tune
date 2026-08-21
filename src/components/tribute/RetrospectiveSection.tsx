@@ -13,7 +13,7 @@ function Confetti() {
           <motion.span
             key={i}
             className={`absolute top-[-8%] h-2 w-1 rounded-full ${
-              i % 2 === 0 ? "bg-wine-bright" : "bg-foreground/70"
+              i % 2 === 0 ? "bg-spotify-green" : "bg-foreground/70"
             }`}
             style={{ left: `${left}%` }}
             animate={{ y: ["0%", "900%"], opacity: [0, 0.8, 0], rotate: [0, 220] }}
@@ -36,12 +36,12 @@ export function RetrospectiveSection() {
         className="text-3xl font-extrabold leading-tight tracking-tight text-foreground"
       >
         Nossa retrospectiva
-        <span className="mt-1 block text-base font-semibold text-rose-soft/80">2 anos em fotos</span>
+        <span className="mt-1 block text-base font-semibold text-muted-foreground">2 anos em fotos</span>
       </motion.h2>
 
       <div className="relative mt-8 pl-6">
         {/* linha do tempo */}
-        <div className="absolute left-1.5 top-2 bottom-2 w-[2px] bg-gradient-to-b from-wine-bright via-wine to-transparent" />
+        <div className="absolute left-1.5 top-2 bottom-2 w-[2px] bg-gradient-to-b from-spotify-green via-spotify-green/60 to-transparent" />
 
         {retrospectiva.map((item, i) => (
           <motion.div
@@ -53,7 +53,7 @@ export function RetrospectiveSection() {
             className={`relative mb-8 ${i % 2 === 0 ? "mr-6" : "ml-6"}`}
           >
             <span
-              className={`absolute top-6 h-3 w-3 rounded-full bg-wine-bright ring-4 ring-background ${
+              className={`absolute top-6 h-3 w-3 rounded-full bg-spotify-green ring-4 ring-background ${
                 i % 2 === 0 ? "-left-[22px]" : "-left-[46px]"
               }`}
             />

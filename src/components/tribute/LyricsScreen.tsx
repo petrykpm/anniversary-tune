@@ -68,7 +68,7 @@ export function LyricsScreen({ onClose }: { onClose: () => void }) {
               }}
               animate={{
                 opacity: i === active ? 1 : i < active ? 0.45 : 0.3,
-                color: i === active ? "var(--foreground)" : "var(--rose-soft)",
+                color: i === active ? "var(--foreground)" : "var(--text-subtle)",
                 scale: i === active ? 1 : 0.985,
               }}
               transition={{ duration: 0.7, ease: "easeOut" }}

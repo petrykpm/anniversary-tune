@@ -33,7 +33,7 @@ export function SpecialMessageCard({ onOpen }: { onOpen: () => void }) {
           whileHover={{ scale: 1.04, filter: "brightness(1.05)" }}
           whileTap={{ scale: 0.96 }}
           transition={{ type: "spring", stiffness: 400, damping: 20 }}
-          className="mt-7 rounded-full bg-foreground px-6 py-3 text-sm font-bold text-wine"
+          className="mt-7 rounded-full bg-spotify-green px-6 py-3 text-sm font-bold text-background"
         >
           Mostrar Mensagem
         </motion.button>
