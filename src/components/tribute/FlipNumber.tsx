@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 /** Número com troca animada tipo odômetro */
 export function FlipNumber({ value, label }: { value: number; label: string }) {
   return (
-    <div className="flex flex-col items-center justify-center rounded-xl bg-secondary/70 px-2 py-4 ring-1 ring-border">
+    <div className="flex flex-col items-center justify-center rounded-lg bg-card px-2 py-4 ring-1 ring-border">
       <div className="relative h-9 overflow-hidden">
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.span
