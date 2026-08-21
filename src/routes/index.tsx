@@ -47,7 +47,7 @@ function Index() {
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 opacity-70 blur-3xl"
-          style={{ background: "var(--gradient-wine)" }}
+          style={{ background: "var(--gradient-player)" }}
         />
 
         <motion.div

@@ -13,7 +13,7 @@ export function Splash() {
         animate={{ scale: [1, 1.18, 1] }}
         transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
       >
-        <Heart className="fill-wine-bright text-wine-bright" size={64} />
+        <Heart className="fill-spotify-green text-spotify-green" size={64} />
       </motion.div>
     </motion.div>
   );

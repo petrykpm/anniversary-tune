@@ -25,7 +25,7 @@ export function PlayPauseButton({ size = 68 }: { size?: number }) {
             exit={{ scale: 0.5, opacity: 0, rotate: 30 }}
             transition={{ duration: 0.18 }}
           >
-            <Pause className="fill-wine-bright text-wine-bright" size={size * 0.4} />
+            <Pause className="fill-background text-background" size={size * 0.4} />
           </motion.span>
         ) : (
           <motion.span
@@ -36,7 +36,7 @@ export function PlayPauseButton({ size = 68 }: { size?: number }) {
             transition={{ duration: 0.18 }}
             className="translate-x-[2px]"
           >
-            <Play className="fill-wine-bright text-wine-bright" size={size * 0.4} />
+            <Play className="fill-background text-background" size={size * 0.4} />
           </motion.span>
         )}
       </AnimatePresence>

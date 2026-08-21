@@ -7,7 +7,7 @@ export function ProgressBar() {
 
   return (
     <div className="w-full">
-      <div className="relative h-1 w-full rounded-full bg-foreground/25">
+      <div className="relative h-1 w-full rounded-full bg-track">
         <motion.div
           className="absolute inset-y-0 left-0 rounded-full bg-foreground"
           style={{ width: `${progress * 100}%` }}
