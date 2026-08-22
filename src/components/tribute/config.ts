@@ -6,7 +6,9 @@ import couple1 from "@/assets/couple-1.jpg";
 import couple3 from "@/assets/couple-3.jpg";
 import couple5 from "@/assets/couple-5.jpg";
 import couple6 from "@/assets/couple-6.jpg";
+import coupleAu from "@/assets/couple-au.jpg";
 import coupleSobre from "@/assets/couple-sobre.jpg";
+import coupleTismo from "@/assets/couple-tismo.jpg";
 
 /** Data de início do namoro (ano, mês, dia) */
 export const dataInicio = new Date("2024-08-25T00:00:00");
@@ -52,3 +54,9 @@ export const retrospectiva = [
 ];
 
 export const mensagemFinal = "Que venham muitos mais 🍷🎶";
+
+/** Seção final — foto dela primeiro, foto dele embaixo */
+export const fotoAu = coupleAu;
+export const legendaAu = "Você é o Au";
+export const fotoTismo = coupleTismo;
+export const legendaTismo = "Do meu Tismo";
