@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { AboutCouple } from "@/components/tribute/AboutCouple";
-import { AuTismoSection } from "@/components/tribute/AuTismoSection";
 import { LyricsScreen } from "@/components/tribute/LyricsScreen";
 import { PlayerScreen } from "@/components/tribute/PlayerScreen";
 import { PlayerProvider } from "@/components/tribute/player-context";
@@ -63,7 +62,6 @@ function Index() {
             <AboutCouple />
             <SpecialMessageCard onOpen={() => setLyricsOpen(true)} />
             <RetrospectiveSection />
-            <AuTismoSection />
           </div>
 
           <AnimatePresence>

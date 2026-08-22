@@ -3,7 +3,6 @@
  * =======================================================================*/
 
 import couple1 from "@/assets/couple-1.jpg";
-import couple3 from "@/assets/couple-3.jpg";
 import couple5 from "@/assets/couple-5.jpg";
 import couple6 from "@/assets/couple-6.jpg";
 import coupleAu from "@/assets/couple-au.jpg";
@@ -49,14 +48,9 @@ export const cartaLinhas = [
 export const retrospectiva = [
   { src: couple1, legenda: "Agosto de 2024 — o começo de tudo" },
   { src: couple6, legenda: "Nosso primeiro ano novo juntos" },
-  { src: couple3, legenda: "Rindo de nada, do jeito que a gente gosta" },
+  { src: coupleAu, legenda: "Você é o Au" },
+  { src: coupleTismo, legenda: "Do meu Tismo" },
   { src: couple5, legenda: "Hoje, dois anos depois — e ainda de mãos dadas" },
 ];
 
 export const mensagemFinal = "Que venham muitos mais 🍷🎶";
-
-/** Seção final — foto dela primeiro, foto dele embaixo */
-export const fotoAu = coupleAu;
-export const legendaAu = "Você é o Au";
-export const fotoTismo = coupleTismo;
-export const legendaTismo = "Do meu Tismo";
